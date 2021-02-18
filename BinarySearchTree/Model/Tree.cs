@@ -20,8 +20,15 @@ namespace BinarySearchTree.Model
         /// Add data to the tree.
         /// </summary>
         /// <param name="data"> Added data. </param>
+        /// <exception cref="ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
         public void Add(T data)
         {
+            // Check the input data for correctness.
+            if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
             // If there is no root element.
             if (Root == null)
             {
@@ -76,8 +83,15 @@ namespace BinarySearchTree.Model
         /// </summary>
         /// <param name="data"> Searched data. </param>
         /// <returns> Found item. </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
         public Node<T> Search(T data)
         {
+            // Check the input data for correctness.
+            if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
             return Search(Root, data);
         }
 
@@ -119,8 +133,15 @@ namespace BinarySearchTree.Model
         /// Wrap over private method.
         /// </summary>
         /// <param name="data"> Data to delete. </param>
+        /// <exception cref="ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
         public void Delete(T data)
         {
+            // Check the input data for correctness.
+            if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
             Root = Delete(Root, data);
         }
 

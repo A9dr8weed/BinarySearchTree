@@ -26,6 +26,12 @@ namespace BinarySearchTree.Model
 
         public Node(T data)
         {
+            // Check the input data for correctness.
+            if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
             Data = data;
             Left = Right = null;
         }
@@ -45,8 +51,15 @@ namespace BinarySearchTree.Model
         /// Add an item to the node.
         /// </summary>
         /// <param name="data"> Added item. </param>
+        /// <exception cref="ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
         public void Add(T data)
         {
+            // Check the input data for correctness.
+            if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
             // New item.
             Node<T> node = new Node<T>(data);
 
